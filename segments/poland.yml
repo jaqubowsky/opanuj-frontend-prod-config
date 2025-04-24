@@ -1,0 +1,5 @@
+description: Poland
+conditions:
+  - attribute: country
+    operator: equals
+    value: pl

@@ -1,0 +1,29 @@
+feature: showSetCountButton
+assertions:
+  - at: 100
+    description: "At 100%, the feature should be enabled for PL"
+    environment: production
+    context:
+      country: pl
+    expectedToBeEnabled: true
+
+  - at: 0
+    description: "At 0%, the feature should be disabled for other countries"
+    environment: production
+    context:
+      country: de
+    expectedToBeEnabled: false
+
+  - at: 100
+    description: "At 100%, the feature should be enabled fin development"
+    environment: development
+    context:
+      country: de
+    expectedToBeEnabled: true
+
+  - at: 100
+    description: "At 100%, the feature should be enabled in preview"
+    environment: preview
+    context:
+      country: de
+    expectedToBeEnabled: true

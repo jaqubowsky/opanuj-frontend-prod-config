@@ -1,0 +1,29 @@
+description: Show setCount button to users from Poland
+tags:
+  - all
+
+bucketBy: country
+
+environments:
+  development:
+    rules:
+      - key: "1"
+        segments: "*" # enabled for everyone in development only
+        percentage: 100
+
+  preview:
+    rules:
+      - key: "1"
+        segments: "*" # enabled for everyone in preview only
+        percentage: 100
+
+  production:
+    rules:
+      - key: "1"
+        segments:
+          - poland # enabled in prod for PL only
+        percentage: 100
+
+      - key: "2"
+        segments: "*" # everyone else
+        percentage: 0
